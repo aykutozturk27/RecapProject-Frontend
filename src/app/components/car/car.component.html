@@ -1,24 +1,68 @@
+<!-- <div
+  *ngIf="dataLoaded == false"
+  class="spinner-border text-primary"
+  role="status"
+>
+  <span class="visually-hidden">Loading...</span>
+</div>
 <table class="table table-hover">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Car Name</th>
-            <th>Brand Name</th>
-            <th>Color Name</th>
-            <th>Description</th>
-            <th>Model Year</th>
-            <th>Daily Price</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let car of cars">
-            <td>{{car.carId}}</td>
-            <td>{{car.carName}}</td>
-            <td>{{car.brandName}}</td>
-            <td>{{car.colorName}}</td>
-            <td>{{car.description}}</td>
-            <td>{{car.modelYear | date : 'dd.MM.yyyy'}}</td>
-            <td>{{car.dailyPrice}}</td>
-        </tr>
-    </tbody>
-</table>
+  <thead *ngIf="dataLoaded == true">
+    <tr>
+      <th>Id</th>
+      <th>Car Name</th>
+      <th>Brand Id</th>
+      <th>Brand Name</th>
+      <th>Color Name</th>
+      <th>Description</th>
+      <th>Model Year</th>
+      <th>Daily Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="cars.length === 0">
+      <td>{{ car.id }}</td>
+      <td>{{ car.name }}</td>
+      <td>{{ car.brandId }}</td>
+      <td>{{ car.description }}</td>
+      <td>{{ car.modelYear | date: "dd.MM.yyyy" }}</td>
+      <td>{{ car.dailyPrice }}</td>
+    </tr>
+    <tr *ngFor="let item of cars">
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.brandId }}</td>
+      <td>{{ car.brandName }}</td>
+      <td>{{ car.colorName }}</td>
+      <td>{{ item.description }}</td>
+      <td>{{ item.modelYear | date: "dd.MM.yyyy" }}</td>
+      <td>{{ item.dailyPrice }}</td>
+    </tr>
+  </tbody>
+</table> -->
+
+<div
+  *ngIf="dataLoaded == false"
+  class="spinner-border text-primary"
+  role="status"
+>
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+<div class="main">
+  <div *ngFor="let car of cars"  class="card text-dark bg-light mb-2" style="width: 25%;">
+    <div class="card-body">
+      <h5 class="card-title">{{car.brandName}} {{car.carName}}</h5>
+      <p class="card-text">{{car.description}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Renk: {{car.colorName}} </li>
+      <li class="list-group-item">Model: {{car.modelYear | date: 'dd/MM/yyyy'}}</li>
+      <li class="list-group-item">Günlük Fiyat: {{car.dailyPrice}}</li>
+    </ul>
+    <div class="card-body" *ngIf="isDetail">
+      <div class="d-grid gap-2 col-8 mx-auto">
+        <button routerLink="/cars/car-detail/{{car.carId}}" class="btn btn-outline-dark" type="button">Detaya Git</button>
+      </div>
+    </div>
+  </div>
+</div>

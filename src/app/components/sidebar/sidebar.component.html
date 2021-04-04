@@ -1,8 +1,47 @@
 <ul class="list-group">
-  <li class="list-group-item list-group-item-primary active">MENU</li>
-  <li routerLink="/cars" class="list-group-item list-group-item-primary">CARS</li>
-  <li routerLink="/brands" class="list-group-item list-group-item-primary">BRANDS</li>
-  <li routerLink="/colors" class="list-group-item list-group-item-primary">COLORS</li>
-  <li routerLink="/customers" class="list-group-item list-group-item-primary">CUSTOMER</li>
-  <li routerLink="/rentals" class="list-group-item list-group-item-primary">RENTAL</li>
+  <!-- <li routerLink="/cars" class="list-group-item list-group-item-primary">
+    TÜMÜNÜ LİSTELE
+  </li> -->
+  <li routerLink="/cars" class="list-group-item list-group-item-primary">
+    CARS
+    <!-- <ul class="list-group">
+      <li
+        routerLink="/cars/{{ car.carId }}"
+        class="list-group-item list-group-item-primary"
+        *ngFor="let car of cars"
+      >
+        {{ car.carName }}
+      </li>
+    </ul> -->
+  </li>
+  <li class="list-group-item list-group-item-primary">
+    BRANDS
+    <ul class="list-group">
+      <li
+        routerLink="/cars/brand/{{ car.brandId }}"
+        class="list-group-item list-group-item-primary"
+        *ngFor="let car of cars"
+      >
+        {{ car.brandName }}
+      </li>
+    </ul>
+  </li>
+  <li class="list-group-item list-group-item-primary">
+    COLORS
+    <ul class="list-group">
+      <li
+        routerLink="/cars/color/{{ car.colorId }}"
+        class="list-group-item list-group-item-primary"
+        *ngFor="let car of cars"
+      >
+        {{ car.colorName }}
+      </li>
+    </ul>
+  </li>
+  <li routerLink="/customers" class="list-group-item list-group-item-primary">
+    CUSTOMER
+  </li>
+  <li routerLink="/rentals" class="list-group-item list-group-item-primary">
+    RENTAL
+  </li>
 </ul>
