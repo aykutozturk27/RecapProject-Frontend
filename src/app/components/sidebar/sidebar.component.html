@@ -1,47 +1,17 @@
 <ul class="list-group">
-  <!-- <li routerLink="/cars" class="list-group-item list-group-item-primary">
-    TÜMÜNÜ LİSTELE
-  </li> -->
-  <li routerLink="/cars" class="list-group-item list-group-item-primary">
+  <li routerLink="/cars" (click) = "setCurrentMenu(0)" [class] = "getCurrentMenuClass(0)">
     CARS
-    <!-- <ul class="list-group">
-      <li
-        routerLink="/cars/{{ car.carId }}"
-        class="list-group-item list-group-item-primary"
-        *ngFor="let car of cars"
-      >
-        {{ car.carName }}
-      </li>
-    </ul> -->
   </li>
-  <li class="list-group-item list-group-item-primary">
+  <li routerLink="/brands" (click) = "setCurrentMenu(1)" [class] = "getCurrentMenuClass(1)">
     BRANDS
-    <ul class="list-group">
-      <li
-        routerLink="/cars/brand/{{ car.brandId }}"
-        class="list-group-item list-group-item-primary"
-        *ngFor="let car of cars"
-      >
-        {{ car.brandName }}
-      </li>
-    </ul>
   </li>
-  <li class="list-group-item list-group-item-primary">
+  <li routerLink = "/colors" (click) = "setCurrentMenu(2)" [class] = "getCurrentMenuClass(2)">
     COLORS
-    <ul class="list-group">
-      <li
-        routerLink="/cars/color/{{ car.colorId }}"
-        class="list-group-item list-group-item-primary"
-        *ngFor="let car of cars"
-      >
-        {{ car.colorName }}
-      </li>
-    </ul>
   </li>
-  <li routerLink="/customers" class="list-group-item list-group-item-primary">
+  <li routerLink="/customers" (click) = "setCurrentMenu(3)" [class] = "getCurrentMenuClass(3)">
     CUSTOMER
   </li>
-  <li routerLink="/rentals" class="list-group-item list-group-item-primary">
+  <li routerLink="/rentals" (click) = "setCurrentMenu(4)" [class] = "getCurrentMenuClass(4)">
     RENTAL
   </li>
 </ul>

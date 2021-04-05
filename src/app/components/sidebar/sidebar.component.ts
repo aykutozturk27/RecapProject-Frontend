@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from 'src/app/models/car';
-import { BrandService } from 'src/app/services/brand.service';
 import { CarService } from 'src/app/services/car.service';
 
 @Component({
@@ -10,7 +9,11 @@ import { CarService } from 'src/app/services/car.service';
 })
 export class SidebarComponent implements OnInit {
   cars: Car[] = [];
-  currentCar: Car;
+  currentMenu: string;
+  menus : string [] = [
+    "cars", "brands", "colors", "rentals", "customers"
+  ]
+  index : number;
 
   constructor(
     private carService: CarService
@@ -26,23 +29,15 @@ export class SidebarComponent implements OnInit {
     });
   }
 
-  setCurrentCars(car: Car) {
-    this.currentCar = car;
+  setCurrentMenu(index: number) {
+    this.currentMenu = this.menus[index];
   }
 
-  getCurrentCarClass(car: Car){
-    if (car == this.currentCar) {
-      return "list-group-item list-group-item-primary active";
+  getCurrentMenuClass(index: number){
+    if (this.menus[index] == this.currentMenu) {
+      return "list-group-item list-group-item-info active";
     } else {
-      return "list-group-item list-group-item-primary";
-    }
-  }
-
-  getAllCarClass(){
-    if (!this.currentCar) {
-      return "list-group-item list-group-item-primary active";
-    } else {
-      return "list-group-item list-group-item-primary";
+      return "list-group-item list-group-item-info";
     }
   }
 }

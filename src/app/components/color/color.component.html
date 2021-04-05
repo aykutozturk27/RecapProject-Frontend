@@ -1,14 +1,31 @@
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let color of colors">
-            <td>{{color.id}}</td>
-            <td>{{color.name}}</td>
-        </tr>
-    </tbody>
-</table>
+<div
+  *ngIf="dataLoaded == false"
+  class="spinner-border text-primary"
+  role="status"
+>
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+<div class="mb-3">
+    <label for="filterText" class="form-label">Renk ara</label>
+    <input type="text" [(ngModel)] = "filterText" class="form-control" id="filterText" 
+    placeholder="Arama ifadesi giriniz">
+  </div>
+  
+  <div *ngIf="filterText" class="alert alert-success">
+   {{filterText}} aradınız
+  </div>
+
+<div class="main">
+    <div *ngFor="let color of colors | colorFilter: filterText" class="card text-dark bg-light mb-2" style="width: 25%;">
+      <div class="card-body">
+        <h5 class="card-title"> {{color.name}}</h5>
+        <p class="card-text">{{color.name}}</p>
+      </div>
+      <div class="card-body">
+        <div class="d-grid gap-2 col-8 mx-auto">
+          <button routerLink = "/cars/color/{{color.id}}" class="btn btn-outline-dark" type="button">Detaya Git</button>
+        </div>
+      </div>
+    </div>
+  </div>

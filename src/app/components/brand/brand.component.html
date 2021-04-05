@@ -5,17 +5,27 @@
 >
   <span class="visually-hidden">Loading...</span>
 </div>
-<table class="table table-hover">
-    <thead *ngIf="dataLoaded == true">
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let brand of brands">
-            <td>{{brand.id}}</td>
-            <td>{{brand.name}}</td>
-        </tr>
-    </tbody>
-</table>
+
+<div class="mb-3">
+    <label for="filterText" class="form-label">Marka ara</label>
+    <input type="text" [(ngModel)] = "filterText" class="form-control" id="filterText" 
+    placeholder="Arama ifadesi giriniz">
+  </div>
+  
+  <div *ngIf="filterText" class="alert alert-success">
+   {{filterText}} aradınız
+  </div>
+
+<div class="main">
+    <div *ngFor="let brand of brands | brandFilter: filterText"  class="card text-dark bg-light mb-2" style="width: 25%;">
+      <div class="card-body">
+        <h5 class="card-title"> {{brand.name}}</h5>
+        <p class="card-text">{{brand.name}}</p>
+      </div>
+      <div class="card-body">
+        <div class="d-grid gap-2 col-8 mx-auto">
+          <button routerLink = "/cars/brand/{{brand.id}}" class="btn btn-outline-dark" type="button">Detaya Git</button>
+        </div>
+      </div>
+    </div>
+  </div>

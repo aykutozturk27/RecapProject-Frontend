@@ -17,6 +17,7 @@
                 <th>Description</th>
                 <th>DailyPrice</th>
                 <th>Model Year</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +28,7 @@
                 <td>{{car.description}}</td>
                 <td>{{car.dailyPrice}}</td>
                 <td>{{car.modelYear | date: 'dd/MM/yyyy'}}</td>
+                <td><button (click) = "addRental(car.carId)" class="btn btn-success">Kirala</button></td>
             </tr>
         </tbody>
     </table>
