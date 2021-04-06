@@ -10,11 +10,11 @@ import { RentalService } from 'src/app/services/rental.service';
   styleUrls: ['./car-detail.component.css'],
 })
 export class CarDetailComponent implements OnInit {
-  car: Car;
+  cars: Car[] = [];
 
   imageBasePath: string = 'https://localhost:44330/';
 
-  // defaultImage: string = "Images/GeosLogo.png";
+  defaultImage: string = "Images/GeosLogo.png";
   dataLoaded = false;
 
   constructor(
@@ -32,8 +32,8 @@ export class CarDetailComponent implements OnInit {
   }
 
   getcardetailbyid(id: number) {
-    this.carService.getcardetailbyid(id).subscribe((response) => {
-      this.car = response.data;
+    this.carService.getcardetailbyid(id).subscribe((response) => {      
+      this.cars = response.data;
       this.dataLoaded = true;      
     });
   }

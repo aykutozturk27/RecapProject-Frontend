@@ -6,7 +6,7 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
-<div class="row">
+<div class="row" *ngFor="let car of cars">
     <img src="{{imageBasePath}}{{car.imagePath}}" class="card-img-top" alt="thumbnail" width="100" height="330">
     <table class="table table-bordered table-responsive table-hover table-dark" style="margin-top: 2%;">
         <thead>
