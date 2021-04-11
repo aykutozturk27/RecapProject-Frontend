@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Car } from 'src/app/models/car';
+import { CarDetailDto } from 'src/app/models/carDetailDto';
 import { CarService } from 'src/app/services/car.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { CarService } from 'src/app/services/car.service';
   styleUrls: ['./car-detail.component.css'],
 })
 export class CarDetailComponent implements OnInit {
-  cars: Car[] = [];
+  cars: CarDetailDto[] = [];
 
   imageBasePath: string = 'https://localhost:44330/';
 

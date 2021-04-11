@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from 'src/app/models/car';
+import { CarDetailDto } from 'src/app/models/carDetailDto';
 import { CarService } from 'src/app/services/car.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { CarService } from 'src/app/services/car.service';
   styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent implements OnInit {
-  cars: Car[] = [];
+  cars: CarDetailDto[] = [];
   currentMenu: string;
   menus : string [] = [
     "cars", "brands", "colors", "rentals", "customers"
