@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Car } from 'src/app/models/car';
 import { CarService } from 'src/app/services/car.service';
-import { RentalService } from 'src/app/services/rental.service';
 
 @Component({
   selector: 'app-car-detail',
@@ -14,13 +13,12 @@ export class CarDetailComponent implements OnInit {
 
   imageBasePath: string = 'https://localhost:44330/';
 
-  defaultImage: string = "Images/GeosLogo.png";
+  //defaultImage: string = "Images/GeosLogo.png";
   dataLoaded = false;
 
   constructor(
     private carService: CarService,
-    private rentalService: RentalService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
   ) {}
 
   ngOnInit(): void {
@@ -36,11 +34,5 @@ export class CarDetailComponent implements OnInit {
       this.cars = response.data;
       this.dataLoaded = true;      
     });
-  }
-
-  addRental(carId: number){
-    // this.rentalService.addRental(car).subscribe((response) => {
-      
-    // })
   }
 }

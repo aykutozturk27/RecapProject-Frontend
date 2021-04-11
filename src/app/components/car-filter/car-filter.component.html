@@ -1,0 +1,27 @@
+<div class="row mb-2">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label class="form-label">Marka Seçiniz</label>
+        <select class="form-select" [(ngModel)]="selectedBrandId">
+          <option [selected]="IsCurrentBrandNull()" [value]="undefined" disabled selected>Choose your option brand</option>
+          <option *ngFor="let brand of brands" [value]="brand.id" [selected]="getSelectedBrand(brand.id)">{{ brand.name }}</option>
+        </select>
+      </div>
+    </div>
+  
+    <div class="col-md-4">
+      <div class="form-group">
+        <label class="form-label">Renk Seçiniz</label>
+        <select class="form-select" [(ngModel)]="selectedColorId">
+          <option [selected]="IsCurrentColorNull()" [value]="undefined" disabled selected>Choose your option color</option>
+          <option *ngFor="let color of colors" [value]="color.id" [selected]="getSelectedColor(color.id)">{{ color.name }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="button-group">
+      <button style="margin-top: 6.5%;" class="btn btn-primary" [routerLink]="getRouterLink()">Filtrele</button>
+      </div>
+    </div>
+  </div>

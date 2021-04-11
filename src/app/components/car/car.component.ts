@@ -14,8 +14,6 @@ import { ColorService } from 'src/app/services/color.service';
 })
 export class CarComponent implements OnInit {
   cars: Car[] = [];
-  brands: Brand[] = [];
-  colors: Color[] = [];
 
   dataLoaded = false;
   isDetail = false;
@@ -24,8 +22,6 @@ export class CarComponent implements OnInit {
 
   constructor(
     private carService: CarService,
-    private brandService: BrandService,
-    private colorService: ColorService,
     private activatedRoute: ActivatedRoute
   ) {}
 
@@ -39,8 +35,6 @@ export class CarComponent implements OnInit {
         this.getCars();
       }
     });
-    this.getBrands();
-    this.getColors();
   }
 
   getallbranddetailbybrandid(brandId: number) {
@@ -62,18 +56,6 @@ export class CarComponent implements OnInit {
       this.cars = response.data;
       this.dataLoaded = true;
       this.isDetail = true;
-    });
-  }
-
-  getBrands() {
-    this.brandService.getBrands().subscribe((response) => {
-      this.brands = response.data;
-    });
-  }
-
-  getColors() {
-    this.colorService.getColors().subscribe((response) => {
-      this.colors = response.data;
     });
   }
 }

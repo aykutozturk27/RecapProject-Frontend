@@ -6,37 +6,7 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
-<div class="row">
-  <div class="col-md-6">
-    <div class="form-group">
-      <label for="brand" class="form-label">Marka Seçiniz</label>
-      <select class="form-select" id="brand">
-        <option *ngFor="let brand of brands">{{ brand.name }}</option>
-      </select>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="input-group">
-      <button style="margin-top: 6.5%;" class="btn btn-primary">Filtrele</button>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-6">
-    <div class="form-group">
-      <label for="color" class="form-label">Renk Seçiniz</label>
-      <select class="form-select" id="color">
-        <option *ngFor="let color of colors">{{ color.name }}</option>
-      </select>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="input-group">
-      <button style="margin-top: 6.5%;" class="btn btn-primary">Filtrele</button>
-    </div>
-  </div>
-</div>
+<app-car-filter></app-car-filter>
 
 <div class="mb-3">
   <label for="filterText" class="form-label">Araba ara</label>
@@ -59,6 +29,7 @@
     class="card text-dark bg-light mb-2"
     style="width: 25%"
   >
+
     <div class="card-body">
       <h5 class="card-title">{{ car.carName }}</h5>
       <p class="card-text">{{ car.description }}</p>
