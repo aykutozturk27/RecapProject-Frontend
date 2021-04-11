@@ -28,6 +28,7 @@ import { ColorAddComponent } from './components/color-add/color-add.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { RegisterComponent } from './components/register/register.component';
+import { ColorDirective } from './directives/color.directive';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { RegisterComponent } from './components/register/register.component';
     BrandAddComponent,
     ColorAddComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ColorDirective
   ],
   imports: [
     BrowserModule,
