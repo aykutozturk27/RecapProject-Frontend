@@ -8,6 +8,6 @@ Angular ile directive, admin-guard, interceptor ile aspect oriented programming,
 Third party eklenti olarak bootstrap,toastr,jquery kullanılmıştır.
 
 Giriş yapıldığında araba sayfasına yönlendirilerek araba ile ilgili detaylar, filtreleme işlemleri ekleme işlemleri yapılmaktadır.
-Bunun dışında marka,renk,müşteri,araba kiralama için de aynı işlemler yapılmaktadır.
+Bunun dışında arabanın markasında,renginde,müşterisinde de aynı işlemler yapılmaktadır. Ayrıca arabanın detayına yönlendirilerek kiralanması sağlanmaktadır.
 
 
