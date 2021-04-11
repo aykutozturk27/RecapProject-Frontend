@@ -3,7 +3,7 @@
 Bu projede, araba kiralama otomasyonu yapılmaktadır. 
 
 Frontend olarak,
-Altyapı olarak angular 9, html ve css kullanılmıştır.
+Altyapısı angular 9, html ve css kullanılmıştır.
 Angular ile directive, admin-guard, interceptor ile aspect oriented programming, custom pipe kullanılarak hazırlanmıştır.
 Third party eklenti olarak bootstrap,toastr,jquery kullanılmıştır.
 
